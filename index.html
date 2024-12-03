@@ -41,6 +41,18 @@
     </script>
 
         <style>
+                        /*web counter part*/
+            
+.website-counter {
+  
+  height: 50px;
+  width: 80px;
+  color: black;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 10px;
+}
         .service-slider{overflow:hidden}.service-container{display:flex;transition:transform .5s ease}.service-item{flex:0 0 100%}@media (min-width:640px){.service-item{flex:0 0 50%}}@media (min-width:2000px){.service-item{flex:0 0 33.333%}}@media (min-width:1800px){.service-item{flex:0 0 25%}}
 
 /* Modal styles */
@@ -407,15 +419,26 @@
           </svg>
     </a></div><br>
                     <h3 class="text-xl font-semibold mb-4">Steps Toward Justice:</h3>
-                    <a href="https://www.coolseotools.com/website-visitor-counter" target="_blank" title="Web Counter">  
-                        <img src="https://www.coolseotools.com/website-visitor-counter/count/&style=style5&show=p&num=6&uid=Zq"  title="Web Counter" alt="AtoZSEOTools Web Counter" />
-                        </a>
-                    </div>
-                
+<!-- hitwebcounter Code START -->
+    <div class="website-counter"></div>
+             </div>     
             </div>
         </div>
     </footer>
     <script defer>
+         var counterContainer = document.querySelector(".website-counter");
+
+var visitCount = localStorage.getItem("page_view");
+
+// Check if page_view entry is present
+if (visitCount) {
+  visitCount = Number(visitCount) + 1;
+  localStorage.setItem("page_view", visitCount);
+} else {
+  visitCount = 1;
+  localStorage.setItem("page_view", 1);
+}
+counterContainer.innerHTML = visitCount;
         // Service items data
         const serviceItems = [
     { title: "Land Disputes", description: "Handling cases related to disputes over land ownership, boundaries, title verification, and encroachment." },
